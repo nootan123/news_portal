@@ -1,0 +1,118 @@
+body .container{
+   
+        height: 600px;
+        width: 25%;
+       
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position: absolute;
+        opacity: 0.8;
+        background-color: rgb(97, 207, 156);
+        border-radius: 6px;
+        /* background-image: url("../image/6.jpg"); */
+}
+
+#iconContainer{
+    margin-top:-7%;
+    position: relative;
+    transform: translate(10%,0%);
+}
+
+
+@media  (max-width: 500px) {
+    body #container{
+        height: 500px;
+        width:80%;
+        top: 50%;
+        left: 50%;
+        /* transform: translate(-50%,-50%); */
+        background-color: rgb(97, 207, 156);        
+        opacity: 0.8;
+
+        position: absolute;
+        border-radius: 5px;
+        /* background-image: none ; */
+        
+        
+    }
+    #iconContainer{
+        margin-top:-10%;
+        position: relative;
+        transform: translate(10%,18%);
+        
+    }
+   
+  }
+
+  @media (min-width:501px) and (max-width: 1000px){
+      body #container{
+        height: 410px;
+        width: 60%;
+      }
+      #iconContainer{
+        margin-top:-5%;
+    }
+    #iconContainer{
+        margin-top:-8%;
+        position: relative;
+        transform: translate(10%,18%);
+    }
+  }
+
+  /* @media (min-width:1001px) and (max-width: 1100px){
+    body #container{
+      width: 60%;
+    }
+} */
+
+    /* @media (min-width: 600px){
+        #container{
+            width: 100%;
+            margin-right: 0%;
+            margin-top: 7%;
+            margin-left: 10%;
+            margin-bottom: 0%;
+            height: 450px;
+
+            
+        }
+        
+    } */
+
+i{
+    color: rgb(0, 170, 0);
+}
+#container .social_icon span i:hover{
+    color: white;
+    cursor: pointer;
+    }
+.card-header h3{
+    color: white;
+    }
+
+#rem{
+    color: rgba(255, 255, 255, 0.781);
+}
+body{
+    background-image: url("../image/6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pError{
+    color:red;
+}
+
+ 
+.spinner{
+  
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 80px;
+	height: 80px;
+    z-index: 9999;
+    
+   
+}
