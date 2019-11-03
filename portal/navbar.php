@@ -1,5 +1,5 @@
 <?php
-  include 'connection.php';
+  include '../config/connection.php';
   $sql = "SELECT * FROM category;";
   $result = $conn -> query($sql);
 ?>

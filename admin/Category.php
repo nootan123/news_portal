@@ -1,7 +1,8 @@
 <?php 
 
     include "navbar.php";
-    include "connection.php";
+    include "../config/connection.php";
+    
     $sql = "select * from category;";
     $result = $conn -> query($sql);
 
