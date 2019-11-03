@@ -1,6 +1,6 @@
 <?php 
      include 'navbar.php';
-     include 'connection.php';
+     include '../config/connection.php';
 
     $sql = "SELECT * FROM addnews ORDER BY id";
     $result  = $conn -> query($sql);

@@ -1,7 +1,7 @@
 
 <?php 
 
-include "connection.php";
+include "../config/connection.php";
 include "navbar.php";
 
 ?>

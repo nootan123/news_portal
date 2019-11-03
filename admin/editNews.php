@@ -1,7 +1,8 @@
 <?php
 
     include 'navbar.php';
-    include 'connection.php';
+    include '../config/connection.php';
+    
     $id = $_GET['edit'];
     echo $id;
     $sql = "select * from addnews where news_id = '$id';";

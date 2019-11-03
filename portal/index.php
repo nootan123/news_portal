@@ -1,25 +1,9 @@
 <?php  
 
     include 'navbar.php';
-    include 'connection.php';
+    include '../config/connection.php';
 
-    function compareByTimeStamp($time1, $time2) 
-    { 
-        if ($time1 > $time2) 
-            return -1; 
-        else if ($time1 < $time2) 
-            return 1; 
-        else
-            return 0; 
-    } 
-    function wordCount($abc){
-        $word1 = strpos($abc, ".");
-        $word2 = strpos($abc, ".", $word1+1);
-        $str = substr($abc, 0, $word2+1);
-        return $str;
-
-    }
-    $sql = "SELECT * FROM addnews";
+    $sql = "SELECT * FROM addnews ORDER BY news_id DESC";
     $result = $conn -> query($sql);
     $arr = array();
     if($result -> num_rows >0){
@@ -29,8 +13,6 @@
             
         }
     }
-    usort($arr, "compareByTimeStamp"); 
-    
   
 ?>
 
@@ -53,7 +35,7 @@
                     
                     if($result -> num_rows > 0){
                         while($row = $result -> fetch_assoc()){
-                            $wo = wordCount(nl2br($row['news_text']));
+                            $wo = substr(nl2br($row['news_text']),0,200);
                             $pic =  $row['news_pic'];
                             ?>
 
@@ -88,7 +70,8 @@
                           $result = $conn -> query($sql);
                           if($result -> num_rows > 0){
                               while($row = $result -> fetch_assoc()){
-                                  $wo = wordCount(nl2br($row['news_text']));
+                                  $wo = substr(nl2br($row['news_text']),0,250);
+                                  $wo.=" ...";
                                   $pic =  $row['news_pic'];
                                   ?>
                 <div class = "border border-secondary rounded mt-2" style = " border-width:1px !important;">
