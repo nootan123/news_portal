@@ -14,6 +14,7 @@
         }
     }
   
+   
 ?>
 
 <html>
@@ -26,7 +27,7 @@
         <div class = "row" >
         <div class = "col-md-2 overflow-auto  sticky-top  pt-5" id = "nos" data-spy="scroll" style = "height: 100vh; ">
 
-                <div style = "">
+                <div>
                    <center style = "font-family: arial;">Trending</center> 
                     <?php
                     
@@ -39,10 +40,10 @@
                             $pic =  $row['news_pic'];
                             ?>
 
-                                <div class = "bg-success rounded ">  
+                                <div class = " rounded bkCol">  
                                     <div class="d-flex flex-row bd-highlight mb-3">
                                             <div class="p-2 bd-highlight">
-                                            <a href="oneNews.php?news=  <?php echo $row['news_id']; ?>" style = "font-family: Helvetica, Arial, sans-serif;"> <h5 style = "color: white;"><?php echo htmlspecialchars(nl2br($row['news_title'])); ?></h5></a>
+                                            <a href="oneNews.php?news=  <?php echo $row['news_id']; ?>" style = "font-family: Helvetica, Arial, sans-serif;"> <h5 ><?php echo htmlspecialchars(nl2br($row['news_title'])); ?></h5></a>
                                             <img src="../admin/image/news/<?php echo $pic ?>" alt="" style = "height: auto; width: 50%; " >
 
                                     </div>
@@ -61,7 +62,7 @@
                     ?>
                 </div>
             </div>
-            <div class = "col-md-7 pt-5 " style = "">
+            <div class = "col-md-7 pt-5 "  style = "">
             <?php
                     
                         foreach($arr as $value){
@@ -74,7 +75,7 @@
                                   $wo.=" ...";
                                   $pic =  $row['news_pic'];
                                   ?>
-                <div class = "border border-secondary rounded mt-2" style = " border-width:1px !important;">
+                <div class = "rounded mt-2" id = "grad" style = " border-width:1px !important;">
                    
                         <div clas= "">
                         
@@ -119,7 +120,9 @@
                 $result = $conn -> query($sql);
                 if($result -> num_rows > 0){
                 while($row = $result -> fetch_assoc()){
-                    $wo = wordCount(nl2br($row['news_text']));
+                   
+                    $wo = substr(nl2br($row['news_text']),0,250);
+                    $wo.=" ...";
                     $pic =  $row['news_pic'];
                     //    echo $pic;
                         ?>
@@ -153,12 +156,18 @@
 </body>
 <style>
       
+
+    
+      
    #nos::-webkit-scrollbar {
   width: 10px;
+  /* visibility: hidden; */
 }
  #nos::-webkit-scrollbar-thumb  {
   background: grey; 
   border-radius: 5px;
+  visibility: hidden;
+
 }
 
 a:hover{
@@ -168,5 +177,16 @@ a:hover{
 a:visited {
     color: hotpink;
 }
+
+#grad {
+  background-image: linear-gradient(-90deg, green, yellow);
+  opacity: 0.8;
+}
+
+.bkCol{
+  background-image: linear-gradient(-90deg, #98FB98, #FF8C00 );
+
+}
   </style>
 </html>
+

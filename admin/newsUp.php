@@ -10,12 +10,12 @@
 
 <html>
 <head>
-
+   
 </head>
 <body>
     <div id = "cont">
     <form action="newsUpPost.php" method = "POST" enctype="multipart/form-data" >
-    
+
     <div class = "form-group" >
             <label for="">category:</label>
             <div style = "width: 260px;">
@@ -66,7 +66,7 @@
         
 
     </div>
-   
+
 
 </body>
 <style>
