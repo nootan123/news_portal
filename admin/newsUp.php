@@ -20,6 +20,7 @@
             <label for="">category:</label>
             <div style = "width: 260px;">
                 <select name = "neCat" class="form-control form-control-lg btn btn-secondary">
+                
                 <?php
                 if($result -> num_rows > 0){
                     while($row = $result ->fetch_assoc()){
@@ -29,6 +30,7 @@
                     <option>
                         <?php
                             echo $row['cat_name'];
+                            // echo $row['cat_id'];
                             echo '<br>';
 
                                 }

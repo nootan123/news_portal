@@ -2,7 +2,33 @@
     include 'navbar.php';
     include '../config/connection.php';
 
+
+
+if(isset($_SERVER['REQUEST_METHOD'])=="POST"){
+    echo "inside Post";
+    if(isset($_POST['catName'])){
+        
+        $category = $_POST['catName'];
+        $description = $_POST['catDes'];
+        echo "$category $description";
+        $sql = "INSERT INTO category (cat_name, cat_desc)  VALUES ('$category', '$description');";
+        if($conn -> query($sql)=== TRUE){
+            echo "<br>New record added.";
+        }
+        else{
+            echo "Error: ".$conn->error;
+        }
+        // echo "category: ".$category."Description: ".$description;
+        unset($_POST);
+       
+
+        
+
+    }
+}
+header("Location: Category.php");
 ?>
+
 <html>
 <head>
 
@@ -63,7 +89,8 @@
      }
     //  var database = firebase.database();
      if($cat.trim()!="" && $des.trim()!="") {
-        //  alert("submit");
+        
+        
         abc();
         
 
