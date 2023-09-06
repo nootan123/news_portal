@@ -53,7 +53,7 @@
                         <td><?php echo $title; ?></td>
                         <td><?php echo $pic; ?></td>
                         <td><?php echo $views; ?></td>
-                        <td><a href="editNews.php?edit= <?php echo $row['news_id']; ?>" class = "btn btn-success">Edit</a></td>
+                        <td><a href="editNews.php?edit= <?php echo $news_id; ?>" class = "btn btn-success">Edit</a></td>
                         <td><a href="delNews.php?delete= <?php echo $news_id; ?>" class = "btn btn-danger">Delete</a></td>
 
 
