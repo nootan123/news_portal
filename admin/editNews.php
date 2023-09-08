@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
     include 'navbar.php';
     include '../config/connection.php';
     
@@ -16,9 +17,9 @@
 </head>
 <body>
     <div id = "cont">
-    <form action="newsUpPost.php" method = "POST" enctype="multipart/form-data" >
+    <form action="updateNews.php" method = "POST" enctype="multipart/form-data" >
     
-    <div class = "form-group" >
+    <label for="id" hidden><?php echo $id ?></label>
             <label for="">category:</label>
             <div style = "width: 260px;">
                 <select name = "neCat" class="form-control form-control-lg btn btn-secondary">
@@ -28,6 +29,8 @@
                         $title = $row['news_title'];
                         $news = $row['news_text'];
                         $pic = $row['news_pic'];
+                        $catId = $row['id'];
+                        $id;
                         ?>
                         <option>
 
@@ -50,8 +53,14 @@
                                                 $resul = $conn -> query($sq);
                                                     if($resul -> num_rows > 0){
                                                         while($ro = $resul -> fetch_assoc()){
-                                                            echo $ro['cat_name'];
-                                                             
+                                                            ?>
+                                                            <option>
+                                                                <?php
+                                                                    echo $ro['cat_name'];
+                                                                ?>
+                                                            </option>
+
+                                                       <?php      
                                                         }
                                                     }  
                                                      
@@ -82,11 +91,12 @@
     <textarea name="neText" class = "form-control" id="newsdes" cols="80" rows="10"><?php echo $news; ?></textarea>
         
     </pre>
-    
     </div>
     <div class = "form-group mt-4">
+        <input type="hidden" name = "id", value = "<?php echo $id ?>" >
     <label for="">Image File:</label><br>
-    <input type="file" name= "neImage" class = "form-control" value = "<?php echo $pic; ?>" value = "<?php echo '$pic'; ?>">
+    <img src=<?php echo "image/news/".$pic; ?> height="70" width = "70">
+    <input type="file" name= "neImage" class = "form-control">
     </div>
     <div class = "mt-4">
         <input type="submit" name = "submit" class = "btn btn-primary form-control ">
