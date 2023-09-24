@@ -6,17 +6,18 @@
 // });
 
 $(document).ready(function(){
+  login();
+    // $("#sub").click(function(){
+    //     $(".spinner").css("display", "block");
+    //     $("body").css("opacity", 0.5);
+    //     $("#container").css("opacity", 0.6);
 
-    $("#sub").click(function(){
-        $(".spinner").css("display", "block");
-        $("body").css("opacity", 0.5);
-        $("#container").css("opacity", 0.6);
-
-    });
+    // });
+    
    
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {  
-         window.location = "first.php";
+         window.location = "index.php";
        
         } else {
          
@@ -29,16 +30,17 @@ function login(){
     
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    window.location = "index.php";
     
-    firebase.auth().signInWithEmailAndPassword(username, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+    // firebase.auth().signInWithEmailAndPassword(username, password).catch(function(error) {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
         
 
-        document.getElementById("pError").innerHTML = errorMessage;
+    //     document.getElementById("pError").innerHTML = errorMessage;
        
-      });
+    //   });
       
 }
 

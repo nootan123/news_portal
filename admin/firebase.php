@@ -25,16 +25,17 @@
 
 // var user = firebase.auth().currentUser;
     firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {  
+                // if (user) {  
               
-                    // alert("welcome: "+user.photoURL);
-                } else if(window.location == "http://localhost/news/admin/index.php"){
-                    // alert(window.location);
-                }
-                else{
-                    window.location = "index.php";
+                //     // alert("welcome: "+user.photoURL);
+                // } 
+                // // else if(window.location == "http://localhost/news/admin/index.php"){
+                // //     // alert(window.location);
+                // // }
+                // else{
+                //     window.location = "index.php";
                    
-                }
+                // }
                 document.getElementsByTagName("img")[0].src = user.photoURL;
     });
 
