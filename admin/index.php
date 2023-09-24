@@ -19,11 +19,7 @@
    </div>
   
     <div id = "container" class = "container" >
-            <div class="d-inline-flex bd-highlight social_icon float-right" id="iconContainer" >
-                <span ><i class="fab fa-facebook-square fa-3x" onclick = "facebookLogin()"></i></span>&nbsp;
-                <span><i class="fab fa-google-plus-square fa-3x" onclick = "googleLogin()" ></i></span>&nbsp;
-                <span><i class="fab fa-twitter-square fa-3x" onclick = " twitterLogin()"></i></span>
-            </div>
+           
     
             <h2 style = "padding-left: 2%;" id="#hea">Sign In</h2>
             <div style = " padding-top: 20%;" id = "nootan">
@@ -64,7 +60,7 @@
                 </form>
                 <div >
                     <center>
-                        Don't have an account?<a   id = "signUp">&nbsp;Sign Up</a><br>
+                        Don't have an account?<a href="signup"  id = "signUp">&nbsp;Sign Up</a><br>
                     <a href ="#">Forget your password?</a>
                     </center>
                    
